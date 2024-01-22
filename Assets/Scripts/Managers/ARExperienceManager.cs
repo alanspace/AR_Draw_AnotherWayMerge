@@ -15,22 +15,22 @@ public class ARExperienceManager : MonoBehaviour
     private ARPlaneManager arPlaneManager = null;
 
     private bool Initialized { get; set; }
-    
-    void Awake() 
+
+    void Awake()
     {
         arPlaneManager = GetComponent<ARPlaneManager>();
         arPlaneManager.planesChanged += PlanesChanged;
 
-        #if UNITY_EDITOR
-            OnInitialized?.Invoke();
-            Initialized = true;
-            arPlaneManager.enabled = false;
-        #endif
+#if UNITY_EDITOR
+        OnInitialized?.Invoke();
+        Initialized = true;
+        arPlaneManager.enabled = false;
+#endif
     }
 
     void PlanesChanged(ARPlanesChangedEventArgs args)
     {
-        if(!Initialized)
+        if (!Initialized)
         {
             Activate();
         }
@@ -51,9 +51,17 @@ public class ARExperienceManager : MonoBehaviour
         Initialized = false;
         arPlaneManager.enabled = true;
     }
-    public void Exit() {
+    public void Exit()
+    {
         SceneManager.LoadScene("MainMenu");
     }
+    public void AddAnchor()
+    {
+        SceneManager.LoadScene("AddAnchor");
+    }
+    public void DrawAnchor()
+    {
+        SceneManager.LoadScene("DrawingAnchor");
+    }
 }
-
     
