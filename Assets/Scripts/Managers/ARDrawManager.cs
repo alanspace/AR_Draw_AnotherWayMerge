@@ -30,7 +30,7 @@ public class ARDrawManager : Singleton<ARDrawManager>
         #if !UNITY_EDITOR    
         DrawOnTouch();
         #else
-        DrawOnMouse();
+        // DrawOnMouse();
         #endif
 	}
 
@@ -81,32 +81,32 @@ public class ARDrawManager : Singleton<ARDrawManager>
         }
     }
 
-    void DrawOnMouse()
-    {
-        if(!CanDraw) return;
+    // void DrawOnMouse()
+    // {
+    //     if(!CanDraw) return;
 
-        Vector3 mousePosition = arCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, lineSettings.distanceFromCamera));
+    //     Vector3 mousePosition = arCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, lineSettings.distanceFromCamera));
 
-        if(Input.GetMouseButton(0))
-        {
-            OnDraw?.Invoke();
+    //     if(Input.GetMouseButton(0))
+    //     {
+    //         OnDraw?.Invoke();
 
-            if(Lines.Keys.Count == 0)
-            {
-                ARLine line = new ARLine(lineSettings);
-                Lines.Add(0, line);
-                line.AddNewLineRenderer(transform, null, mousePosition);
-            }
-            else 
-            {
-                Lines[0].AddPoint(mousePosition);
-            }
-        }
-        else if(Input.GetMouseButtonUp(0))
-        {
-            Lines.Remove(0);   
-        }
-    }
+    //         if(Lines.Keys.Count == 0)
+    //         {
+    //             ARLine line = new ARLine(lineSettings);
+    //             Lines.Add(0, line);
+    //             line.AddNewLineRenderer(transform, null, mousePosition);
+    //         }
+    //         else 
+    //         {
+    //             Lines[0].AddPoint(mousePosition);
+    //         }
+    //     }
+    //     else if(Input.GetMouseButtonUp(0))
+    //     {
+    //         Lines.Remove(0);   
+    //     }
+    // }
 
     GameObject[] GetAllLinesInScene()
     {
