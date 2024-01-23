@@ -6,11 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 043863072a8ce485e80e4c97bab758fc
+  - enabled: 1
+    path: Assets/Scenes/DrawingAnchor.unity
+    guid: d176acdd998544316b4e7379640ef107
+  - enabled: 1
     path: Assets/Scenes/AddAnchor.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: bcf4b1736e2974497ada7bf2d87ff9e3, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: b3397aa2d86bb49139580ed291c873de, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 9172d8d5c39f942869018f1dfb55734c, type: 2}
     com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: 1aadd0a690f964d89a882566a0821b07, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: de557a10449294156962b5eca95b8014, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: d239bdaeac62b491b93f6612a22db302, type: 2}
+  m_UseUCBPForAssetBundles: 0
